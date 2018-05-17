@@ -1,2 +1,1 @@
-# Homework3
-Psychic Game
+# Psychic-Game-

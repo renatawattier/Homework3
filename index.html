@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Psychic Game</title>
+</head>
+
+<body>
+    <h1> The Psychic Game</h1>
+
+    <p> Wins: <span id="wins">0</span></p>
+    <p> Losses:  <span id="losses">0</span></p>
+    <p> Letter Guessed: <span id=Guesses> </span></p>
+    <p>Guesses Left: <span id="GuessesLeft"> </span></p>
+
+
+
+    <script type="text/javascript">
+
+        var wins = 0
+        var losses = 0
+        var UserGuess = []
+        var yourGuessesSoFar = 10;
+        var game = ["r", "e", "n", "a", "t", "w"];
+            var randomItem = game[Math.floor(Math.random() * game.length)];
+            console.log("this is your my random item " + randomItem);
+
+
+            document.onkeyup = function (event) {
+                var userGuess = event.key;
+                userGuess.textContent = event.key;
+                console.log(userGuess)
+                
+                document.getElementById("Guesses").innerHTML = userGuess;
+
+                if (userGuess == randomItem) {
+                    wins++;
+                    alert("you win, you have " + wins + " " + "wins");
+                    yourGuessesSoFar = 10
+                    yourGuessesSoFar.length
+                    document.getElementById("wins").innerHTML = wins;
+                               
+                    console.log(userGuess)
+                }
+            
+
+            if (yourGuessesSoFar == 0) {
+                losses++;
+                alert('you lost');
+                yourGuessesSoFar = 10;
+                yourGuessesSoFar.length = 0;
+                document.getElementById("losses").innerHTML = losses;
+            }
+
+            if (userGuess != randomItem) {
+                yourGuessesSoFar--
+                console.log(yourGuessesSoFar)
+                document.getElementById("GuessesLeft").innerHTML = yourGuessesSoFar;
+            }
+            }
+
+        </script>
+        
+
+
+
+
+    </body>
+    </html>
